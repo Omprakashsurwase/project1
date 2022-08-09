@@ -12,7 +12,7 @@ pipeline {
         } 
          stage('Build-Image'){
             steps {
-                sh "docker build -t omprakashsurwase/tomcatomimage ."
+                sh "docker build -t omprakashsurwase/tomcatomimage:v1.$BUILD_ID ."
             }
          }
  stage('login to dockerhub') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('push image') {
             steps{
-                sh 'docker push omprakashsurwase/tomcatomimage'
+                sh 'docker push omprakashsurwase/tomcatomimage:v1.$BUILD_ID'
             }
         }
         stage('Deploy application on kubernetes container'){
