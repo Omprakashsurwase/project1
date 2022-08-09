@@ -25,6 +25,10 @@ pipeline {
                 sh 'docker push omprakashsurwase/tomcatomimage'
             }
         }
+        stage('Deploy application on kubernetes container'){
+            steps{
+                sh 'kubectl apply -f deployment.yml'
+            }
+        }
     }
 }
-
