@@ -6,7 +6,7 @@ pipeline {
    stages {
         stage('Checkout') {
             steps {
-               git branch: 'main', credentialsId: 'github', url: 'https://github.com/Omprakashsurwase/Assessment_deplo_appy_on_kubernetes.git'
+               git branch: 'main', credentialsId: 'github', url: 'https://github.com/Omprakashsurwase/project1.git'
                 sh "ls -lart ./*"
             }
         } 
